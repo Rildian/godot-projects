@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csfxknxaj580a"]
+
+[ext_resource type="Script" path="res://Lesson 4/flower.gd" id="1_qc6su"]
+
+[node name="Lesson4" type="Node2D"]
+script = ExtResource("1_qc6su")
