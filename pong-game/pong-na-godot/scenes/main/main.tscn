@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://dj3xxj8btjv74"]
+
+[ext_resource type="Texture2D" uid="uid://c6u5g14isqn1n" path="res://pong-na-godot/assets/sprites/campo-roxo.png" id="1_18ju3"]
+[ext_resource type="Texture2D" uid="uid://cfc038tmnslc8" path="res://pong-na-godot/assets/sprites/jogador.png" id="2_epdms"]
+[ext_resource type="PackedScene" uid="uid://b2fsprk5578rx" path="res://pong-na-godot/scenes/player/player.tscn" id="3_r4vv0"]
+[ext_resource type="PackedScene" uid="uid://coulsfus62q85" path="res://pong-na-godot/scenes/ball/ball.tscn" id="4_5vgi5"]
+[ext_resource type="PackedScene" uid="uid://c78p6ictmm13p" path="res://pong-na-godot/scenes/game_manager/GameManager.tscn" id="5_y13up"]
+[ext_resource type="PackedScene" uid="uid://4s2u3jl0p6sp" path="res://pong-na-godot/scenes/area/area.tscn" id="6_dkycf"]
+[ext_resource type="FontFile" uid="uid://b0246tw5fyb3e" path="res://pong-na-godot/assets/fonte/PublicPixel-z84yD.ttf" id="7_oym75"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o1xlq"]
+font = ExtResource("7_oym75")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrd1k"]
+font = ExtResource("7_oym75")
+font_size = 50
+
+[node name="Main" type="Node2D" groups=["player"]]
+scale = Vector2(1, 1.00582)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 357.917)
+texture = ExtResource("1_18ju3")
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+scale = Vector2(0.5, 5.6)
+texture = ExtResource("2_epdms")
+
+[node name="Player" parent="." instance=ExtResource("3_r4vv0")]
+position = Vector2(1160, 368)
+player1 = false
+
+[node name="Player2" parent="." instance=ExtResource("3_r4vv0")]
+position = Vector2(136, 360)
+
+[node name="Ball" parent="." instance=ExtResource("4_5vgi5")]
+
+[node name="GameManager" parent="." instance=ExtResource("5_y13up")]
+
+[node name="Area1" parent="." instance=ExtResource("6_dkycf")]
+position = Vector2(-30, 0)
+scale = Vector2(3, 1)
+
+[node name="Area2" parent="." instance=ExtResource("6_dkycf")]
+position = Vector2(1330, 0)
+scale = Vector2(3, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PainelDePontuacao" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" type="Label" parent="UI/PainelDePontuacao"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 13.0
+offset_right = -77.0
+offset_bottom = 63.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o1xlq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2" type="Label" parent="UI/PainelDePontuacao"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 723.0
+offset_top = 13.0
+offset_right = 773.0
+offset_bottom = 63.0
+text = "0"
+label_settings = SubResource("LabelSettings_qrd1k")
+
+[connection signal="area_entered" from="Area1" to="GameManager" method="_on_area_1_area_entered"]
+[connection signal="area_entered" from="Area2" to="GameManager" method="_on_area_2_area_entered"]

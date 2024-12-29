@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://coulsfus62q85"]
+
+[ext_resource type="Script" path="res://pong-na-godot/scenes/ball/ball.gd" id="1_1wsko"]
+[ext_resource type="Texture2D" uid="uid://nh021j6ufs8o" path="res://pong-na-godot/assets/sprites/bola.png" id="2_ao2kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18cxu"]
+
+[node name="Ball" type="Area2D"]
+script = ExtResource("1_1wsko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ao2kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_18cxu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

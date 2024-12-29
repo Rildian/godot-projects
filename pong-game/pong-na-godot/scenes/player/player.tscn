@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2fsprk5578rx"]
+
+[ext_resource type="Script" path="res://pong-na-godot/scenes/player/player.gd" id="1_3kc0m"]
+[ext_resource type="Texture2D" uid="uid://cfc038tmnslc8" path="res://pong-na-godot/assets/sprites/jogador.png" id="1_h2ubx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugod6"]
+size = Vector2(20, 137)
+
+[node name="Player" type="StaticBody2D" groups=["player"]]
+script = ExtResource("1_3kc0m")
+player1 = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h2ubx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ugod6")
