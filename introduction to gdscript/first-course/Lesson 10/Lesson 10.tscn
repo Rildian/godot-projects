@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpylwsyq8uwuc"]
+
+[ext_resource type="Script" path="res://Lesson 10/zoo.gd" id="1_ns3fb"]
+[ext_resource type="Script" path="res://Lesson 10/cat.gd" id="2_s4mnt"]
+[ext_resource type="Script" path="res://Lesson 10/bird.gd" id="3_pxpxe"]
+[ext_resource type="Script" path="res://Lesson 10/fish.gd" id="4_88rsi"]
+[ext_resource type="Script" path="res://Lesson 10/monkey.gd" id="5_2jwpi"]
+
+[node name="Lesson10" type="Node"]
+script = ExtResource("1_ns3fb")
+
+[node name="Cat" type="Node" parent="."]
+script = ExtResource("2_s4mnt")
+
+[node name="Bird" type="Node" parent="."]
+script = ExtResource("3_pxpxe")
+
+[node name="Fish" type="Node" parent="."]
+script = ExtResource("4_88rsi")
+
+[node name="Monkey" type="Node" parent="."]
+script = ExtResource("5_2jwpi")

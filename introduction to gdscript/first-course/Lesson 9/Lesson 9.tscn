@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlty63heilw1"]
+
+[ext_resource type="Script" path="res://Lesson 9/car.gd" id="1_i2ccd"]
+[ext_resource type="Script" path="res://Lesson 9/driver.gd" id="1_q0kpl"]
+
+[node name="Lesson9" type="Node"]
+
+[node name="Driver" type="Node" parent="."]
+script = ExtResource("1_q0kpl")
+
+[node name="Car" type="Node" parent="Driver"]
+script = ExtResource("1_i2ccd")
+year = 2007
+make = "Honda"
+model = "Civic"

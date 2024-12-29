@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="first-course"
-run/main_scene="res://Lesson 7/Lesson 7.tscn"
+run/main_scene="res://Lesson 12/Lesson 12.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"

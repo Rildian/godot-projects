@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0yh44xbwwbnp"]
+
+[ext_resource type="Script" path="res://Lesson 12/debug.gd" id="1_q5ssk"]
+
+[node name="Lesson12" type="Node"]
+script = ExtResource("1_q5ssk")

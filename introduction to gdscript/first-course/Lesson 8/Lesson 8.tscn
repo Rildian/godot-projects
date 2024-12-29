@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj1s5ovaiwwlr"]
+
+[ext_resource type="Script" path="res://Lesson 8/employee.gd" id="1_vlo2t"]
+[ext_resource type="Script" path="res://Lesson 8/manager.gd" id="2_61lev"]
+
+[node name="Lesson8" type="Node2D"]
+
+[node name="President" type="Node" parent="."]
+script = ExtResource("1_vlo2t")
+
+[node name="Operations Manager" type="Node" parent="President"]
+script = ExtResource("2_61lev")
+department = "Operations"
+
+[node name="Operator 1" type="Node" parent="President/Operations Manager"]
+script = ExtResource("1_vlo2t")
+
+[node name="Operator 2" type="Node" parent="President/Operations Manager"]
+script = ExtResource("1_vlo2t")
+
+[node name="Operator 3" type="Node" parent="President/Operations Manager"]
+script = ExtResource("1_vlo2t")
+
+[node name="Operator 4" type="Node" parent="President/Operations Manager"]
+script = ExtResource("1_vlo2t")
+
+[node name="Marketing Manager" type="Node" parent="President"]
+script = ExtResource("2_61lev")
+department = "Marketing"
+
+[node name="Marketer 1" type="Node" parent="President/Marketing Manager"]
+script = ExtResource("1_vlo2t")
+
+[node name="Marketer 2" type="Node" parent="President/Marketing Manager"]
+script = ExtResource("1_vlo2t")
