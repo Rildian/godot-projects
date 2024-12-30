@@ -1,9 +1,4 @@
 extends Node2D
-# use $"../Ball"
-# somehow @onready var ball: Area2D = $Ball result null
-# $"UI/PainelDePontuacao/Player1"
-# $"..UI/PainelDePontuacao/Player2"
-
 
 var player1_points : int 
 var player2_points : int

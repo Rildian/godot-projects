@@ -1,26 +1,42 @@
-extends Node2D
-# use $"../Ball"
-# somehow @onready var ball: Area2D = $Ball result null
-# $"UI/PainelDePontuacao/Player1"
-# $"..UI/PainelDePontuacao/Player2"
+extends Area2D
+
+var ball_speed : int = 520
+var initial_position : Vector2 = Vector2(640, 360) #x-y directions
+var new_direction : Vector2
+var y_min : float = 0
+var x_min : float = 0
+var y_max : float = 720
+var x_max : float = 1280
+
+func _ready() -> void:
+	reset_ball()
 
 
-var player1_points : int 
-var player2_points : int
-@onready var show_player1_points : Label = $"../UI/PainelDePontuacao/Player1"
-@onready var show_player2_points : Label = $"../UI/PainelDePontuacao/Player2"
-@onready var ball_functions : Area2D = $"../Ball"
+func _process(delta : float) -> void:
+	movement_ball(delta)
+	colision_with_walls()
 
-func _on_area_1_area_entered(area: Area2D) -> void:
-	player2_points += 1
-	show_player2_points.text = str(player2_points)
-	OS.delay_msec(200.000)
-	ball_functions.reset_ball()
-	 
 
-func _on_area_2_area_entered(area: Area2D) -> void:
-	player1_points += 1
-	show_player1_points.text = str(player1_points)
-	OS.delay_msec(200.000)
-	ball_functions.reset_ball()
- 
+func choose_direction() -> void:
+	# choosing the initial direction randoming
+	var random_x : int = [-1, 1].pick_random()
+	var random_y : int = [-1, 1].pick_random()
+	new_direction = Vector2(random_x, random_y)
+
+
+func reset_ball() -> void:
+	position = initial_position
+	choose_direction()
+
+func movement_ball(delta : float) -> void:
+	position += new_direction*ball_speed*delta # the current position (x,y) is changed by new_direction
+
+
+func colision_with_walls() -> void:
+	if position.y >= y_max or position.y <= y_min:
+		new_direction.y *= -1
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		new_direction.x *= -1
