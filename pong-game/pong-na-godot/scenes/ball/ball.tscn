@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://coulsfus62q85"]
+[gd_scene load_steps=6 format=3 uid="uid://coulsfus62q85"]
 
 [ext_resource type="Script" path="res://pong-na-godot/scenes/ball/ball.gd" id="1_1wsko"]
 [ext_resource type="Texture2D" uid="uid://nh021j6ufs8o" path="res://pong-na-godot/assets/sprites/bola.png" id="2_ao2kh"]
+[ext_resource type="AudioStream" uid="uid://dqiocxvwwiyif" path="res://pong-na-godot/assets/sons/impacto-barreira.wav" id="3_t5ke7"]
+[ext_resource type="AudioStream" uid="uid://d4cd6ea2hlght" path="res://pong-na-godot/assets/sons/impacto-jogador.wav" id="4_o4x1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18cxu"]
 
@@ -13,5 +15,11 @@ texture = ExtResource("2_ao2kh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_18cxu")
+
+[node name="ImpactOfTheBarrier" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t5ke7")
+
+[node name="ImpactOfThePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o4x1n")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c78p6ictmm13p"]
+[gd_scene load_steps=3 format=3 uid="uid://c78p6ictmm13p"]
 
 [ext_resource type="Script" path="res://pong-na-godot/scenes/game_manager/game_manager.gd" id="1_f4jba"]
+[ext_resource type="AudioStream" uid="uid://d3gawvbf870j5" path="res://pong-na-godot/assets/sons/impacto-gol.wav" id="2_w1mx4"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_f4jba")
+
+[node name="PointSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w1mx4")

@@ -7,6 +7,9 @@ var y_min : float = 0
 var x_min : float = 0
 var y_max : float = 720
 var x_max : float = 1280
+@onready var barrier_impact : AudioStreamPlayer = $ImpactOfTheBarrier
+@onready var impact_player : AudioStreamPlayer = $ImpactOfThePlayer
+
 
 func _ready() -> void:
 	reset_ball()
@@ -28,15 +31,17 @@ func reset_ball() -> void:
 	position = initial_position
 	choose_direction()
 
+
 func movement_ball(delta : float) -> void:
 	position += new_direction*ball_speed*delta # the current position (x,y) is changed by new_direction
 
 
 func colision_with_walls() -> void:
 	if position.y >= y_max or position.y <= y_min:
+		barrier_impact.play()
 		new_direction.y *= -1
-
-
+		
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		impact_player.play()
 		new_direction.x *= -1

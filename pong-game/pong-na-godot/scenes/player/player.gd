@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @export var player1 : bool 
-var player_speed : int = 515
+var player_speed : int = 800
 
 func _process(delta : float) -> void:
 	player_movement(delta)
@@ -22,4 +22,3 @@ func player_movement(delta : float) -> void:
 
 func limit_movement() -> void:
 	position.y = clamp(position.y, 65, 656) 
-	
