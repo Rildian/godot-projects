@@ -4,7 +4,7 @@ var texture_original = load("res://mainfolder/assets/sprites/bola.png")
 var texture_switch = load("res://mainfolder/assets/sprites/bola2.png")
 var initial_position : Vector2 = Vector2(640, 360)
 var new_direction : Vector2 
-var ball_speed : int = 200
+var ball_speed : int = 400
 
 func _ready() -> void:
 	reset_ball()
@@ -36,4 +36,8 @@ func dont_go_away() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		$SpriteBall.set_texture(texture_switch)
+		if $SpriteBall.texture == texture_original:
+			$SpriteBall.set_texture(texture_switch)
+		else:
+			$SpriteBall.set_texture(texture_original)
+		new_direction.x *= -1

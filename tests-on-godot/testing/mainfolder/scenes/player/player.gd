@@ -3,8 +3,7 @@ extends StaticBody2D
 var speed : int = 500
 
 func _ready() -> void:
-	position.x = 640
-	position.y = 320
+	pass
 	
 
 func _process(delta: float) -> void:
@@ -12,11 +11,7 @@ func _process(delta: float) -> void:
 	limit_position()
 
 func player_movement(delta: float) -> void:
-	if Input.is_action_pressed("mov_right"):
-		position.x += speed*delta
-	elif Input.is_action_pressed("mov_left"):
-		position.x -= speed*delta
-	elif Input.is_action_pressed("mov_up"):
+	if Input.is_action_pressed("mov_up"):
 		position.y -= speed*delta
 	elif Input.is_action_pressed("mov_down"):
 		position.y += speed*delta
