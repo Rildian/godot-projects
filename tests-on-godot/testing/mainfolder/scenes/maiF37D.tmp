@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2yvo1vj74v1v"]
+
+[ext_resource type="Texture2D" uid="uid://baomqmpdm81l4" path="res://mainfolder/assets/sprites/campo-roxo.png" id="1_qjxh6"]
+[ext_resource type="PackedScene" uid="uid://cd3am6qxr0uac" path="res://mainfolder/scenes/player/player.tscn" id="2_rca00"]
+[ext_resource type="PackedScene" uid="uid://cleh57f7toswr" path="res://mainfolder/scenes/ball/ball.tscn" id="3_2f421"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639, 361)
+scale = Vector2(0.999219, 0.998611)
+texture = ExtResource("1_qjxh6")
+
+[node name="Player" parent="." instance=ExtResource("2_rca00")]
+position = Vector2(76, 231)
+
+[node name="ball" parent="." instance=ExtResource("3_2f421")]
+position = Vector2(404, 202)
