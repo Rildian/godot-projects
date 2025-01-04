@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dstconfu5yer5"]
+
+[ext_resource type="Texture2D" uid="uid://baomqmpdm81l4" path="res://mainfolder/assets/sprites/campo-roxo.png" id="1_1cd4a"]
+[ext_resource type="Script" path="res://mainfolder/scenes/main/singleplayer/scenes/main_scene/singleplayer_scene.gd" id="1_84sfd"]
+[ext_resource type="PackedScene" uid="uid://cd3am6qxr0uac" path="res://mainfolder/scenes/main/multiplayer/scenes/player/player.tscn" id="2_pcyn8"]
+[ext_resource type="Script" path="res://mainfolder/scenes/main/singleplayer/scenes/player/player_single.gd" id="3_g0a1d"]
+[ext_resource type="Script" path="res://mainfolder/scenes/main/singleplayer/scenes/ai/ai.gd" id="4_42wn0"]
+[ext_resource type="PackedScene" uid="uid://dqgbgx1kx60qf" path="res://mainfolder/scenes/main/singleplayer/scenes/ball/ball_single.tscn" id="6_dnvu6"]
+
+[node name="singleplayer" type="Node2D"]
+script = ExtResource("1_84sfd")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639.75, 363.75)
+scale = Vector2(1.00039, 1.00625)
+texture = ExtResource("1_1cd4a")
+
+[node name="PlayerSingle" parent="." instance=ExtResource("2_pcyn8")]
+position = Vector2(-1, 235)
+script = ExtResource("3_g0a1d")
+
+[node name="AI" parent="." instance=ExtResource("2_pcyn8")]
+position = Vector2(1252, 264)
+script = ExtResource("4_42wn0")
+
+[node name="BallSingle" parent="." instance=ExtResource("6_dnvu6")]

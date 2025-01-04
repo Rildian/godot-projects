@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://c345m8ck64ups"]
+
+[ext_resource type="Script" path="res://mainfolder/scenes/main/menu/menu.gd" id="1_d27ro"]
+[ext_resource type="FontFile" uid="uid://pnjjldymn87o" path="res://mainfolder/assets/fonte/PublicPixel-z84yD.ttf" id="2_dunpq"]
+
+[node name="main_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" type="VBoxContainer" parent="."]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -115.5
+offset_right = 302.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d27ro")
+
+[node name="SinglePlayer" type="Button" parent="menu"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_dunpq")
+text = "Singleplayer"
+
+[node name="Multiplayer" type="Button" parent="menu"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dunpq")
+text = "Multiplayer"
+
+[node name="Quit" type="Button" parent="menu"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dunpq")
+text = "Quit"
+
+[connection signal="pressed" from="menu/SinglePlayer" to="menu" method="_on_single_player_pressed"]
+[connection signal="pressed" from="menu/Multiplayer" to="menu" method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="menu/Quit" to="menu" method="_on_quit_pressed"]
