@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqgbgx1kx60qf"]
+
+[ext_resource type="Script" path="res://mainfolder/scenes/main/singleplayer/scenes/ball/ball_single.gd" id="1_ctphq"]
+[ext_resource type="Texture2D" uid="uid://0lb7xxvx6ihm" path="res://mainfolder/assets/sprites/bola.png" id="1_vbc0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s08d4"]
+
+[node name="BallSingle" type="CharacterBody2D"]
+script = ExtResource("1_ctphq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_vbc0a")
+
+[node name="ColisionBall" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s08d4")
