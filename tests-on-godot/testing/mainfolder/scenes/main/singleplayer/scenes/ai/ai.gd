@@ -1,19 +1,21 @@
 extends StaticBody2D
 
-var ball_position : Vector2
-var distance : int
+var ball_pos : Vector2
+var dist : int
 var move_by : int
+var win_height : int
+var p_height : int
+const speed : = 500
 
-
-func _ready() -> void:
-	pass # Replace with function body.
-
-func _process(delta: float) -> void:
-	#ball_position = $"../ball".position()
-	#distance = position.y - ball_position.y
-	#move_by = get_parent().speed*delta
-	#position.y -= move_by
-	limit_position()
+func _process(delta):
+	ball_pos = $"../BallSingle".position
+	dist = position.y - ball_pos.y
 	
-func limit_position() -> void:
-	position.y = clamp(position.y, 0, 700)
+	if abs(dist) > speed * delta:
+		move_by = speed * delta * (dist / abs(dist))
+	else:
+		move_by = dist
+	position.y -= move_by
+	
+	#limit paddle movement to window
+	position.y = clamp(position.y, 0, 720)
