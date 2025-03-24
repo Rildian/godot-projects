@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://du843wt7xfv0f" path="res://scripts/player_cat.gd" id="1_vkel5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufweu"]
-size = Vector2(12, 6)
+size = Vector2(12, 16)
 
 [sub_resource type="Animation" id="Animation_o2jfq"]
 length = 0.001
@@ -237,7 +237,6 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 script = ExtResource("1_vkel5")
 
 [node name="Colision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_ufweu")
 
 [node name="Sprite" type="Sprite2D" parent="."]
