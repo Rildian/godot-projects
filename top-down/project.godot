@@ -12,8 +12,13 @@ config_version=5
 
 config/name="top-down"
 run/main_scene="uid://c16kp60tvwlx8"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/use_filter=false
+boot_splash/image="uid://tale0e2b56l1"
+config/icon="uid://diak4wu5d47jp"
+config/macos_native_icon="uid://diak4wu5d47jp"
+config/windows_native_icon="uid://diak4wu5d47jp"
 
 [display]
 
