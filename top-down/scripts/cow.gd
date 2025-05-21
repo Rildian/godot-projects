@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum COW_STATE { IDLE, WALK }
 
-@export var move_speed : float = 200
+@export var move_speed : float = 20
 @export var idle_timer : float = 5
 @export var walk_timer : float = 2
 
@@ -21,10 +21,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if (current_state == COW_STATE.WALK):
-		velocity = (move_direction * move_speed * delta)
-		
-	move_and_slide()
+		velocity = (move_direction * move_speed)
+	
+	move_and_collide(velocity*delta)
+	
 
+		
 
 func select_new_direction():
 	move_direction = Vector2(

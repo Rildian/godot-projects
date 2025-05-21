@@ -97,6 +97,7 @@ transitions = ["Start", "idle_right", SubResource("AnimationNodeStateMachineTran
 size = Vector2(15, 5)
 
 [node name="Cow" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_cairq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

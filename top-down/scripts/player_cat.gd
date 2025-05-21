@@ -12,8 +12,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	movements()
-	move_and_slide() # understanding what is this
+	move_and_collide(velocity*_delta)
 	pick_new_state()
+	
 
 func movements() -> void:
 	var input_directions : Vector2 = Vector2(
