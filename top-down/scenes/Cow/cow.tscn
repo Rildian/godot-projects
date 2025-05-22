@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://eno8vm6go55s"]
 
-[ext_resource type="Script" uid="uid://dn5cdd84sv6ux" path="res://scripts/cow.gd" id="1_cairq"]
+[ext_resource type="Script" uid="uid://dn5cdd84sv6ux" path="res://scripts/Cow/cow.gd" id="1_cairq"]
 [ext_resource type="Texture2D" uid="uid://c6mnoftnkajsq" path="res://assets/sprout/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="1_fgglk"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_cairq"]

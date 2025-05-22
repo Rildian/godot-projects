@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6wdaarvtgegt"]
+
+[ext_resource type="Script" uid="uid://dcoj4xit8auin" path="res://scripts/Cursor/cursor.gd" id="1_hqtxy"]
+
+[node name="Cursor" type="Node"]
+script = ExtResource("1_hqtxy")

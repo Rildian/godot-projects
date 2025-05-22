@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://clsahx087ndyv"]
 
 [ext_resource type="Texture2D" uid="uid://bidmgbsci27jn" path="res://assets/sprout/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_ufweu"]
-[ext_resource type="Script" uid="uid://du843wt7xfv0f" path="res://scripts/player_cat.gd" id="1_vkel5"]
+[ext_resource type="Script" uid="uid://du843wt7xfv0f" path="res://scripts/Player/player_cat.gd" id="1_vkel5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufweu"]
 size = Vector2(12, 16)

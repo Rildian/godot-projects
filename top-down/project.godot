@@ -16,7 +16,7 @@ config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/use_filter=false
 boot_splash/image="uid://tale0e2b56l1"
-config/icon="uid://diak4wu5d47jp"
+config/icon="uid://o6mnvl3gyx1a"
 config/macos_native_icon="uid://diak4wu5d47jp"
 config/windows_native_icon="uid://diak4wu5d47jp"
 

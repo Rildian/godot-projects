@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tale0e2b56l1"
-path="res://.godot/imported/05145e12ccc6ca85b9a0fa5804359e22.png-7e5113ecb8b1b9b0c601211385cd36d2.ctex"
+uid="uid://dks44bcw3v8to"
+path="res://.godot/imported/lol.png-d1bcef19860d12fb1c4662aed884341f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resources/05145e12ccc6ca85b9a0fa5804359e22.png"
-dest_files=["res://.godot/imported/05145e12ccc6ca85b9a0fa5804359e22.png-7e5113ecb8b1b9b0c601211385cd36d2.ctex"]
+source_file="res://assets/resources/lol.png"
+dest_files=["res://.godot/imported/lol.png-d1bcef19860d12fb1c4662aed884341f.ctex"]
 
 [params]
 
